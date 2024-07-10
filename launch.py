@@ -121,13 +121,13 @@ if clients != 0:
         subprocess.Popen(hc_launch, shell=True)
 
 else:
-    # launch += ' -config="/arma3/configs/{}"'.format(CONFIG_FILE)
     launch += ' -config="{}"'.format(CONFIG_FILE)
+    # launch += ' -config="/arma3/configs/{}"'.format(CONFIG_FILE)
 
 launch += ' -port={} -name="{}"'.format(
     os.environ["PORT"], os.environ["ARMA_PROFILE"]
 )
-launch += '-profiles="/arma3/configs/profiles"'
+# launch += '-profiles="/arma3/configs/profiles"'
 
 if os.path.exists("servermods"):
     launch += mod_param("serverMod", local.mods("servermods"))
