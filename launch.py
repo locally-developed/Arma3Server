@@ -123,9 +123,10 @@ if clients != 0:
 else:
     launch += ' -config="/arma3/configs/{}"'.format(CONFIG_FILE)
 
-launch += ' -port={} -name="{}" -profiles="/arma3/configs/profiles"'.format(
+launch += ' -port={} -name="{}"'.format(
     os.environ["PORT"], os.environ["ARMA_PROFILE"]
 )
+launch += '-profiles="/arma3/configs/profiles"'
 
 if os.path.exists("servermods"):
     launch += mod_param("serverMod", local.mods("servermods"))
