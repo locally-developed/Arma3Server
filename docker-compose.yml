@@ -1,4 +1,4 @@
-version: '3.9'
+version: '4.0'
 services:
   arma3:
     build: .
@@ -6,6 +6,12 @@ services:
     platform: linux/amd64
     container_name: arma3
     network_mode: host
+    ports:
+      - '2302:2302'
+      - '2303:2303'
+      - '2304:2304'
+      - '2305:2305'
+      - '2306:2306'
     volumes:
       - './missions:/arma3/mpmissions'
       - './configs:/arma3/configs'
