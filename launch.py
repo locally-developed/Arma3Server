@@ -29,7 +29,7 @@ if os.environ["SKIP_INSTALL"] in ["", "false"]:
 
     steamcmd = ["/steamcmd/steamcmd.sh"]
     steamcmd.extend(["+force_install_dir", "/arma3"])
-    steamcmd.extend(["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"], os.environ["STEAM_GUARD"]])
+    steamcmd.extend(["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"]])
     steamcmd.extend(["+app_update", "233780"])
     if env_defined("STEAM_BRANCH"):
         steamcmd.extend(["-beta", os.environ["STEAM_BRANCH"]])
@@ -40,7 +40,7 @@ if os.environ["SKIP_INSTALL"] in ["", "false"]:
         for depot in os.environ["STEAM_ADDITIONAL_DEPOT"].split("|"):
             depot_parts = depot.split(",")
             steamcmd.extend(
-                ["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"], os.environ["STEAM_GUARD"]]
+                ["+login", os.environ["STEAM_USER"], os.environ["STEAM_PASSWORD"]]
             )
             steamcmd.extend(
                 ["+download_depot", "233780", depot_parts[0], depot_parts[1]]
