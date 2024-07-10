@@ -1,17 +1,16 @@
-version: '4.1'
+version: '4.2'
 services:
   arma3:
     build: .
     image: ghcr.io/locally-developed/arma3server/arma3server:latest
     platform: linux/amd64
     container_name: arma3
-    network_mode: host
     ports:
-      - '2302:2302'
-      - '2303:2303'
-      - '2304:2304'
-      - '2305:2305'
-      - '2306:2306'
+      - '2302:2302/udp'
+      - '2303:2303/udp'
+      - '2304:2304/udp'
+      - '2305:2305/udp'
+      - '2306:2306/udp'
     volumes:
       - './missions:/arma3/mpmissions'
       - './configs:/arma3/configs'
